@@ -21,11 +21,17 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                @auth
+                {{-- @auth --}}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('products.create')}}">Create</a>
-                  </li> 
-                @endauth
+                  <a class="nav-link active" aria-current="page" href="{{route('products.index')}}">products</a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{route('cat.index')}}">categories</a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/user">users</a>
+                </li> 
+                {{-- @endauth --}}
              
             </ul>
            

@@ -1,4 +1,4 @@
-@extends('category.layout')
+@extends('layouts.layout')
 
 @section('content')
 <br>
@@ -10,7 +10,8 @@
   @endif
 
 
-  <a class="btn btn-info" href="{{route('cat.create')}}">create</a>  
+  <a class="btn btn-info mb-3" href="{{route('cat.create')}}">Create</a>  
+
 <div class="table-responsive">
     <table class="table table-striped table-hover table-borderless table-primary align-middle">
         <thead class="table-light">
