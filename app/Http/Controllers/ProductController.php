@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function  __construct(){
+        $this->middleware("auth")->except("index","show");
+    }
     public function index()
     {
         $products = DB::select('select P.*, C.name as category_name from products  P INNER JOIN categories C on P.cat_id = C.id');
@@ -31,7 +35,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-       // dd($request->all());
+      
 
         $request->validate([
             'name'=>'required',
@@ -43,6 +47,7 @@ class ProductController extends Controller
         ]);
         $input = $request->all();
         if ($image = $request->file('image')) {
+           
            $destinationPath = 'images/';
            $profileImage = date('YmdHis').".".$image->getClientOriginalExtension();
            $image->move($destinationPath, $profileImage);

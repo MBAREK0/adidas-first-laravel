@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password')->nullable()->default(null);
-            $table->string('carte_bancaire')->unique();
-            $table->string('adress');
+            $table->string('carte_bancaire')->unique()->nullable()->default(null);
+            $table->string('adress')->nullable()->default(null);
             $table->timestamps();
         });
     }

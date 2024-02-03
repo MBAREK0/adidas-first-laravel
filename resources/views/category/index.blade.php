@@ -27,16 +27,16 @@
                     <td>{{$item->name}}</td>
                     <td></td>
                     <td></td>
-                 
+                 @auth 
                     <td>
                         <form action="{{route('cat.destroy',$item->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
                              </form>
-                            </td>
+                    </td>
                             <td><a class="btn btn-primary" href="{{route('cat.edit',$item->id)}}">Edit</a>  </td>
-
+                    @endauth
                   
                 </tr>
                 @endforeach

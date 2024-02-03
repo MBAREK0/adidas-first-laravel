@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
+    public function  __construct(){
+        $this->middleware("auth");
+    }
     public function list_Users(){
         $Users= User::all();
         return view('Users.index', compact('Users'));

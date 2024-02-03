@@ -10,8 +10,9 @@
   @endif
 
 
- 
-    <a class="btn btn-info mb-3"  href="{{route('products.create')}}">Create</a>
+  @auth
+  <a class="btn btn-info mb-3"  href="{{route('products.create')}}">Create</a>   
+  @endauth
  <br>
 <div class="table-responsive">
     <table class="table table-striped table-hover table-borderless table-primary align-middle">
@@ -39,6 +40,7 @@
                     <td>{{$item->category_name}}</td>
                     <td>{{$item->price}}</td>
 
+                    @auth
                     <td>
                         
                         <form action="{{route('products.destroy',$item->id)}}" method="post">
@@ -50,7 +52,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{route('products.edit',$item->id)}}">Edit</a>  
                     </td>
-                          
+                     @endauth     
                     <td>
                     <a class="btn btn-info" href="{{route('products.show',$item->id)}}">Show</a>     
                     </td>
