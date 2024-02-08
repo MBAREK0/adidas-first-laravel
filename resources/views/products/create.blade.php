@@ -18,7 +18,7 @@
     <ul>
         @foreach ($errors->all() as $item)
         <li>{{$item}}</li>
-        @endforeach
+  @endforeach
        
     </ul>
   </div>

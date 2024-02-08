@@ -25,14 +25,14 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="{{route('products.index')}}">products</a>
                 </li> 
-                @auth 
+                {{-- @auth  --}}
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="{{route('cat.index')}}">categories</a>
                 </li> 
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="/user">users</a>
                 </li> 
-                @endauth
+                {{-- @endauth --}}
              
             </ul>
            
